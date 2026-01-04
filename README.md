@@ -8,7 +8,7 @@ and high-scale payment platforms such.
 
 ---
 
-## 🎯 Goals
+## Goals
 
 - Demonstrate real-world financial system design
 - Implement an immutable double-entry ledger
@@ -18,7 +18,7 @@ and high-scale payment platforms such.
 
 ---
 
-## 🧠 Architectural Overview
+## Architectural Overview
 
 The platform is built around **event sourcing** and an **immutable ledger**.
 
@@ -45,7 +45,7 @@ Audit & Reconciliation
 
 ---
 
-## 🧱 Services
+## Services
 
 ### Payment Processor
 - Receives payment intents
@@ -71,7 +71,7 @@ Audit & Reconciliation
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 - Java 21 / Spring Boot 3
 - Apache Kafka (event backbone)
@@ -83,7 +83,7 @@ Audit & Reconciliation
 
 ---
 
-## ⚖️ Financial Correctness
+## Financial Correctness
 
 - Every transaction produces:
   - 1 DEBIT entry
@@ -94,7 +94,7 @@ Audit & Reconciliation
 
 ---
 
-## 🔁 Failure Handling
+## Failure Handling
 
 - No partial commits
 - No database rollbacks
@@ -103,7 +103,7 @@ Audit & Reconciliation
 
 ---
 
-## 📈 Load Testing
+## Load Testing
 
 The project includes k6 tests simulating concurrent payment traffic:
 
@@ -115,8 +115,9 @@ Run example:
 
 ```bash
 k6 run k6/load-test.js
+```
 
-## 🚀 Why This Project Matters
+## Why This Project Matters
 
 This repository is **not** a demo CRUD app.
 
@@ -127,7 +128,7 @@ It demonstrates:
 - Clear separation of concerns  
 - Design decisions aligned with regulated environments
 
-## 📌 Next Steps (Planned)
+## Next Steps (Planned)
 
 - Avro schemas + Schema Registry  
 - Exactly-once semantics end-to-end  
