@@ -135,8 +135,7 @@ It demonstrates:
 - Chaos engineering scenarios  
 - Cost per TPS estimation on AWS
 
-## PM
-🤝 Contribution
+## 🤝 Contribution
 Contributions are welcome! Feel free to open issues and pull requests.
 
 [![LinkedIn](https://img.shields.io/badge/in/mirellawanessa-fff?style=flat&logo=linkedin&logoColor=FFFFFF&labelColor=8b7bdf)](https://www.linkedin.com/in/mirellawanessa)  
