@@ -4,7 +4,7 @@ A fintech-grade, event-driven payments platform designed to demonstrate
 **strong consistency**, **financial correctness**, **auditability**, and **horizontal scalability**.
 
 This project models architectural patterns used in modern **core banking systems**
-and high-scale payment platforms such.
+and high-scale payment platforms.
 
 ---
 
