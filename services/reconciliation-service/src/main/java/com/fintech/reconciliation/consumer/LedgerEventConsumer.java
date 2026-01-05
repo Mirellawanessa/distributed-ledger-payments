@@ -1,30 +1,24 @@
-package com.fintech.reconciliation.service;
+package com.fintech.reconciliation.consumer;
 
 import com.fintech.reconciliation.model.LedgerEntryView;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
+import com.fintech.reconciliation.service.ReconciliationService;
+import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.stereotype.Component;
 
-@Service
-public class ReconciliationService {
+@Component
+public class LedgerEventConsumer {
 
-    private static final Logger log = LoggerFactory.getLogger(ReconciliationService.class);
+    private final ReconciliationService reconciliationService;
 
-    public void reconcile(LedgerEntryView entry) {
+    public LedgerEventConsumer(ReconciliationService reconciliationService) {
+        this.reconciliationService = reconciliationService;
+    }
 
-        // Core reconciliation rule:
-        // Every transaction must have exactly one DEBIT and one CREDIT entry.
-        log.info(
-                "Reconciling transaction={} account={} type={} amount={}",
-                entry.transactionId(),
-                entry.accountId(),
-                entry.type(),
-                entry.amount()
-        );
-
-        // Future enhancements:
-        // - Validate that total sum per transaction equals zero
-        // - Detect discrepancies or orphaned entries
-        // - Trigger alerts (metrics, logs, notifications)
+    @KafkaListener(
+        topics = "ledger-events",
+        groupId = "reconciliation"
+    )
+    public void consume(LedgerEntryView event) {
+        reconciliationService.reconcile(event);
     }
 }
